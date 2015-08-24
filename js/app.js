@@ -42,14 +42,14 @@ var Enemy = function() {
     this.x = -100;
     this.y = allY[Math.floor(Math.random() * 3)];
     this.speed = Math.floor(100 + (Math.random() * speedIncrease));
-}
+};
 
 // adding update function to the prototype
 Enemy.prototype.update = function(dt) {
     // time delta is added for smooth animation 
     this.x = this.x + (this.speed * dt);
     if (this.x > 550) {
-        this.x = -100
+        this.x = -100;
         this.y = this.y + 83;
         this.speed = Math.floor(100 + (Math.random() * speedIncrease));
         if (this.y > 226) {
@@ -61,19 +61,19 @@ Enemy.prototype.update = function(dt) {
         player.reset();
         }
     }
-}
+};
 
 
 Enemy.prototype.render = function() {
     //drawImage() method draws the enemy onto the canva at the x and y coordinate
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 /*Player class*/
 var Player = function() {
   this.x = 200;
   this.y = 400;
-}
+};
 
 // adding update function to the prototype
 Player.prototype.update = function() {
@@ -95,16 +95,16 @@ Player.prototype.update = function() {
     if (this.y < 60){
         this.reset();
     }
-}
+};
 
 Player.prototype.render = function() {
 //drawImage() method draws the avatar onto the canva at the x and y coordinate
  ctx.drawImage(Resources.get(avatarImages[avatarIndex]), this.x, this.y);
-}
+};
 // Assigning the input of the user to the variable
 Player.prototype.handleInput = function(key) {
   this.ctlKey = key;
-}
+};
 // Reset the location of the player and decrease number of lives when there is a collision
 Player.prototype.reset = function() {
   player.x = 200;
@@ -114,13 +114,13 @@ Player.prototype.reset = function() {
   if (lives < 0) {
     endGame();
   }
-}
+};
 
 /*Gem class*/
 var Gem = function() {
   this.x = gems[Math.floor(Math.random() * 5)];
   this.y = allY[Math.floor(Math.random() * 3)];
-}
+};
 
 // adding update function to the prototype
 Gem.prototype.update = function() {
@@ -132,13 +132,13 @@ Gem.prototype.update = function() {
         }
     }
     document.getElementById('points').innerHTML = 'Points: ' + totalPoints;
-}
+};
 
 Gem.prototype.render = function() {
     // drawImage() method draws the gem onto the canva at the x and y coordinate
   ctx.drawImage(Resources.get(gemImages[gemIndex]), this.x, this.y);
 
-}
+};
 
 /*instantiate objects*/
 var enemyA = new Enemy();
@@ -250,10 +250,10 @@ function startClick () {
 // countdown method is a timer based on the minutes chosen by the user. When time becomes 0, endGame method is called
 function countdown(minutes) {
     var seconds = 60;
-    var mins = minutes
+    var mins = minutes;
     function tick() {
         var counter = document.getElementById("timer");
-        var current_minutes = mins-1
+        var current_minutes = mins-1;
         seconds--;
         counter.innerHTML = 
         current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
