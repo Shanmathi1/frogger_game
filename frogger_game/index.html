@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Udacity Frogger</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div id="mobileScreen">
+		<h1>Sorry!</h1>
+		<img src="images/sadface.png"/>
+		<h2>You're on a mobile device</h2>
+		<h4>Udacity Frogger requires a keyboard.</h4>
+		<p>Please come back and visit us on a desktop or a laptop.</p>
+	</div>
+	<div id="selectionScreen">
+		<h1>Frogger Adventure!</h1>
+		<hr>
+		<h2>Choose Avatar!</h2>
+		<img id="avatar0" class="avatarImage" onclick="avatarClick(this.id, 0)" src="images/char-boy.png" />
+		<img id="avatar1" class="avatarImage" onclick="avatarClick(this.id, 1)" src="images/char-cat-girl.png" />
+		<img id="avatar2" class="avatarImage" onclick="avatarClick(this.id, 2)" src="images/char-horn-girl.png" />
+		<img id="avatar3" class="avatarImage" onclick="avatarClick(this.id, 3)" src="images/char-pink-girl.png" />
+		<img id="avatar4" class="avatarImage" onclick="avatarClick(this.id, 4)" src="images/char-princess-girl.png" />
+		<hr>
+		<h2>Choose Difficulty!</h2>
+		<button id="easyButton" class="button difficultyButton" onclick="difficultyClick(this.id, 'Easy')">Hero</button>
+		<button id="mediumButtom" class="button difficultyButton" onclick="difficultyClick(this.id, 'Medium')">King</button>
+		<button id="hardButton" class="button difficultyButton" onclick="difficultyClick(this.id, 'Hard')">God</button>
+		<hr>
+		<h2>Choose Duration!</h2>
+		<button id="twoButton" class="button durationButton" onclick="timeClick (this.id, 'one')">1 Minute</button>
+		<button id="fourButton" class="button durationButton" onclick="timeClick (this.id, 'two')">2 Minutes</button>
+		<button id="sixButton" class="button durationButton" onclick="timeClick (this.id, 'three')">3 Minutes</button>
+		<hr>
+		<audio autoplay loop id="sounds" src="sounds/M-GameBG.mp3"></audio>
+		<div>
+			<h2>Backgroud Music</h2>
+			<button id="musicButton" class="button"  onclick="document.getElementById('sounds').play()">Play</button>
+			<button id="musicButton" class="button" onclick="document.getElementById('sounds').pause()">Stop</button>
+		</div>
+		<hr>
+		<button id="startGame" class="button" onclick="startClick();">Play</button>
+		<hr>
+		<br><p id="signature">Created by Shanmathi</p>
+	</div>
+	<div id="gameScreen">
+		<h1>Game Over!</h1>
+		<hr>
+		<div id="gameSummary">
+			<h2>You Scored<h2>
+				<h1 id="pointsSummary">0</h1>
+				<h2>Points</h2>
+			</div>
+			<hr>
+			<br><p id="signature">Created by Shanmathi</p>
+		</div>
+		<div id ="stats">
+			<div id="lives">Hearts: 7</div>
+			<div id="timer">2:00</div>
+			<div id="points">Points: 0</div>
+		</div>
+		<script src="js/resources.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/engine.js"></script>
+		<div id="dificultyText">Dificulty: Easy</div>
+		<button id="resetButton" class="button" onclick="history.go(0)">Reset</button>
+	</body>
+
+	</html>
