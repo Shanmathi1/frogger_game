@@ -4,7 +4,7 @@ Frogger Adventure!
 To play the game access the following link on a laptop 
 or desktop (mobile not currently supported):
 
-
+http://shanmathi1.github.io/frogger_game/
 
 Select an avatar, a dificulty rating and a duration,
 then click Play. Once the game starts, use the
